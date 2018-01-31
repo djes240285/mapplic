@@ -195,17 +195,14 @@ jQuery(document).ready(function($) {
 		});
 
 		// Add new pin to the map
-		data.top = $('#landmark-settings .landmark-lat').val();
-		data.left = $('#landmark-settings .landmark-lng').val();
-		// alert(data.top);
-		
+		data.top = $('#landmark-settings .landmark-tmp-top').val();		
+		data.left = $('#landmark-settings .landmark-tmp-left').val();
 
-		var pin = $('<a></a>').attr({ 'href': '#' + data.id, 'title': data.title, 'data-location': data.id }).addClass('mapplic-pin selected-pin').addClass(data.pin).click(function(e) {
+		var pin = $('<a></a>').attr({ 'href': '#' + data.id, 'title': data.title }).addClass('mapplic-pin selected-pin no-fill').addClass(data.pin).click(function(e) {
 			e.preventDefault();
 		}).appendTo($('.mapplic-layer:visible')).offset({ top: data.top, left: data.left });
 		pin.data('landmarkData', data);
-		
-		
+			
 		// $("[data-location='" + data.id + "']").offset({ top: data.top, left: data.left });
 
 		$('.duplicate-landmark').show();

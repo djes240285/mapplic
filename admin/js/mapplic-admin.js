@@ -469,16 +469,16 @@
 								});
 
 								$(self.o.selector).css('cursor', 'pointer');
-								$(self.o.selector, this).on('click touchend', function (event) {
+								$(self.o.selector, this).on('click touchend', function () {
 
 									var offset = $(this).offset();
-									event.stopPropagation();
+									// event.stopPropagation();
 									// $(".title-input").val(this.tagName + " coords ( " + offset.left + ", " + offset.top + " )");
 									// alert(this.tagName + " coords ( " + offset.left + ", " + offset.top + " )");
 									// $(".content").offset({ top: 30, left: 100 });
 									// $("[data-location='g-006']").offset({ top: offset.top, left: offset.left });
-									$('#landmark-settings .landmark-lat').val(offset.top);
-									$('#landmark-settings .landmark-lng').val(offset.left);
+									$('#landmark-settings .landmark-tmp-top').val(offset.top);
+									$('#landmark-settings .landmark-tmp-left').val(offset.left);
 
 
 									var id = $(this).attr('id');
