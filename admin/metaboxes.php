@@ -55,6 +55,8 @@ function mapplic_landmark_box($post, $param) {
 			<input type="text" class="landmark-lng input-text geopos-field" placeholder="Longitude">
 			<input type="text" class="landmark-tmp-top input-text geopos-field" placeholder="offsetTop">
 			<input type="text" class="landmark-tmp-left input-text geopos-field" placeholder="offsetLeft">
+			<input type="text" class="landmark-tmp-right input-text geopos-field" placeholder="offsetRight">
+			<input type="text" class="landmark-tmp-bottom input-text geopos-field" placeholder="offsetBottom">
 		</div>
 
 		<p><strong><?php _e('Color and Pin Type', 'mapplic'); ?></strong></p>

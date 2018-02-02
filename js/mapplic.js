@@ -268,7 +268,7 @@
 				var s = this;
 
 				// Construct
-				this.el = $('<div></div>').addClass('mapplic-tooltip mapplic-hovertip');
+				this.el = $('<div></div>').addClass('mapplic-tooltip mapplic-hovertip test');
 				this.title = $('<h4></h4>').addClass('mapplic-tooltip-title').appendTo(this.el);
 				if (this.hovertipdesc) this.desc = $('<div></div>').addClass('mapplic-tooltip-description').appendTo(this.el);
 				this.triangle = $('<div></div>').addClass('mapplic-tooltip-triangle').appendTo(this.el);

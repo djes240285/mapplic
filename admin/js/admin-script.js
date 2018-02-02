@@ -159,7 +159,7 @@ jQuery(document).ready(function($) {
 
 			newLandmark(data);
 			$(this).val(mapplic_localization.save);
-			console.log(data);
+			// console.log(data);
 		}
 	});
 
@@ -186,27 +186,28 @@ jQuery(document).ready(function($) {
 		$('#landmark-settings .id-input').val(duplicate.id);
 	});
 
-	var newLandmark = function(data) {
-		// console.log(data);
+	var newLandmark = function(data) {		
 		$.each(mapData.levels, function(index, level) {
+			// console.log(level);
 			if (level.id == shownLevel) {
 				level.locations.push(data);
 			}
 		});
 
-		// Add new pin to the map
-		data.top = $('#landmark-settings .landmark-tmp-top').val();		
-		data.left = $('#landmark-settings .landmark-tmp-left').val();
+		var lTop = $('#landmark-settings .landmark-tmp-top').val();		
+		var lLeft = $('#landmark-settings .landmark-tmp-left').val();
 
-		var pin = $('<a></a>').attr({ 'href': '#' + data.id, 'title': data.title }).addClass('mapplic-pin selected-pin no-fill').addClass(data.pin).click(function(e) {
+		var pin = $('<a></a>').attr({ 'href': '#' + data.id, 'title': data.title }).addClass('mapplic-pin selected-pin').addClass(data.pin).click(function(e) {			
 			e.preventDefault();
-		}).appendTo($('.mapplic-layer:visible')).offset({ top: data.top, left: data.left });
+
+		}).appendTo($('.mapplic-layer:visible'));
 		pin.data('landmarkData', data);
-			
-		// $("[data-location='" + data.id + "']").offset({ top: data.top, left: data.left });
+		pin.offset({ top: lTop, left: lLeft });
+
 
 		$('.duplicate-landmark').show();
 	}
+
 
 	var saveLandmarkData = function(data) {
 		data.id 			= $('#landmark-settings .id-input').val();
